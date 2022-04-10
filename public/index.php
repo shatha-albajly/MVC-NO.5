@@ -2,6 +2,7 @@
 
 use app\controllers\Controller;
 use app\controllers\categoriesController;
+use app\controllers\CitiesController;
 
 use app\Router;
 
@@ -32,7 +33,7 @@ Router::get('/dashboard/addresses/update', [addressesController::class, 'updateA
 Router::post('/dashboard/addresses/update', [addressesController::class, 'updateAddresses']);
 Router::post('/dashboard/addresses/delete', [addressesController::class, 'deleteAddresses']);
 
-Router::get('/dashboard/authors', [authorsController::class, 'showCities']);
+Router::get('/dashboard/authors', [authorsController::class, 'showAuthors']);
 Router::get('/dashboard/authors/create', [authorsController::class, 'createAuthors']);
 Router::post('/dashboard/authors/create', [authorsController::class, 'createAuthors']);
 Router::get('/dashboard/authors/update', [authorsController::class, 'createAuthors']);
@@ -45,6 +46,13 @@ Router::post('/categories/create', [categoriesController::class, 'createCategori
 Router::get('/categories/update', [categoriesController::class, 'updateCategories']);
 Router::post('/categories/update', [categoriesController::class, 'updateCategories']);
 Router::post('/categories/delete', [categoriesController::class, 'deleteCategories']);
+
+Router::get('/cities', [CitiesController::class, 'showCities']);
+Router::get('/cities/create', [CitiesController::class, 'createCities']);
+Router::post('/cities/create', [CitiesController::class, 'createCities']);
+Router::get('/cities/update', [CitiesController::class, 'updateCities']);
+Router::post('/cities/update', [CitiesController::class, 'updateCities']);
+Router::post('/cities/delete', [CitiesController::class, 'deleteCities']);
 
 Router::get('/dashboard/users', [usersController::class, 'showUsers']);
 Router::get('/dashboard/users/create', [usersController::class, 'createUsers']);
