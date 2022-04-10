@@ -5,6 +5,7 @@ use app\controllers\categoriesController;
 use app\controllers\CitiesController;
 use app\controllers\paymentsController;
 use app\controllers\AuthorsController;
+use app\controllers\publishersController;
 use app\Router;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -83,11 +84,11 @@ Router::get('/dashboard/orders/update', [ordersController::class, 'updateOrders'
 Router::post('/dashboard/orders/update', [ordersController::class, 'updateOrders']);
 Router::post('/dashboard/orders/delete', [ordersController::class, 'deleteOrders']);
 
-Router::get('/dashboard/publishers', [publishersController::class, 'showPublishers']);
-Router::get('/dashboard/publishers/create', [publishersController::class, 'createPublishers']);
-Router::post('/dashboard/publishers/create', [publishersController::class, 'createPublishers']);
-Router::get('/dashboard/publishers/update', [publishersController::class, 'updatePublishers']);
-Router::post('/dashboard/publishers/update', [publishersController::class, 'updatePublishers']);
-Router::post('/dashboard/publishers/delete', [publishersController::class, 'deletePublishers']);
+Router::get('/publishers', [publishersController::class, 'showPublishers']);
+Router::get('/publishers/create', [publishersController::class, 'createPublishers']);
+Router::post('/publishers/create', [publishersController::class, 'createPublishers']);
+Router::get('/publishers/update', [publishersController::class, 'updatePublishers']);
+Router::post('/publishers/update', [publishersController::class, 'updatePublishers']);
+Router::post('/publishers/delete', [publishersController::class, 'deletePublishers']);
 
 Router::resolve();
