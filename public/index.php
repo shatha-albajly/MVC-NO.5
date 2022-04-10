@@ -6,6 +6,7 @@ use app\controllers\CitiesController;
 use app\controllers\paymentsController;
 use app\controllers\AuthorsController;
 use app\controllers\publishersController;
+use app\controllers\offersController;
 use app\Router;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -70,12 +71,12 @@ Router::get('/payments/update', [paymentsController::class, 'updatePayments']);
 Router::post('/payments/update', [paymentsController::class, 'updatePayments']);
 Router::post('/payments/delete', [paymentsController::class, 'deletePayments']);
 
-Router::get('/dashboard/offers', [offersController::class, 'showOffers']);
-Router::get('/dashboard/offers/create', [offersController::class, 'createOffers']);
-Router::post('/dashboard/offers/create', [offersController::class, 'createOffers']);
-Router::get('/dashboard/offers/update', [offersController::class, 'updateOffers']);
-Router::post('/dashboard/offers/update', [offersController::class, 'updateOffers']);
-Router::post('/dashboard/offers/delete', [offersController::class, 'deleteOffers']);
+Router::get('/offers', [offersController::class, 'showOffers']);
+Router::get('/offers/create', [offersController::class, 'createOffers']);
+Router::post('/offers/create', [offersController::class, 'createOffers']);
+Router::get('/offers/update', [offersController::class, 'updateOffers']);
+Router::post('/offers/update', [offersController::class, 'updateOffers']);
+Router::post('/offers/delete', [offersController::class, 'deleteOffers']);
 
 Router::get('/dashboard/orders', [ordersController::class, 'showOrders']);
 Router::get('/dashboard/orders/create', [ordersController::class, 'createOrders']);
