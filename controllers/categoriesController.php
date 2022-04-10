@@ -6,7 +6,7 @@ namespace app\controllers;
 // use app\Products;
 use app\Router;
 use app\helpers\UtilHelper;
-use app\DBFunctions\DBFunctions;
+use app\DBFunctions\DBCategories;
 
 
 class categoriesController
@@ -22,9 +22,9 @@ class categoriesController
     public static function showCategories()
     {
         $keyword = $_GET['search'] ?? '';
-        DBFunctions::showCategories($keyword);
+        DBCategories::showCategories($keyword);
         Router::renderView('categories/index', [
-            'products' => DBFunctions::$products,
+            'products' => DBCategories::$products,
             'keyword' => $keyword
         ]);
     }
@@ -57,8 +57,8 @@ class categoriesController
             header('Location: /categories');
             exit;
         }
-        DBFunctions::getCategoriesById($id);
-        $productData = DBFunctions::$selected;
+        DBCategories::getCategoriesById($id);
+        $productData = DBCategories::$selected;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             print_r($_POST);
@@ -89,7 +89,7 @@ class categoriesController
             header('Location: /categories');
             exit;
         }
-        if (DBFunctions::deleteCategories($id)) {
+        if (DBCategories::deleteCategories($id)) {
             header('Location: /categories');
             exit;
         }
@@ -132,9 +132,9 @@ class categoriesController
 
             if (self::$id) {
                 echo "ffff";
-                DBFunctions::updateCategories();
+                DBCategories::updateCategories();
             } else {
-                DBFunctions::createCategories();
+                DBCategories::createCategories();
             }
         }
     }
