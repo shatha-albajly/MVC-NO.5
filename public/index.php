@@ -1,7 +1,8 @@
 <?php
 
 use app\controllers\Controller;
-use app\citiesControllers\citiesController;
+use app\controllers\categoriesController;
+
 use app\Router;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -38,12 +39,12 @@ Router::get('/dashboard/authors/update', [authorsController::class, 'createAutho
 Router::post('/dashboard/authors/update', [authorsController::class, 'createAuthors']);
 Router::post('/dashboard/authors/delete', [authorsController::class, 'createAuthors']);
 
-Router::get('/dashboard/categories', [categoriesController::class, 'showCategories']);
-Router::get('/dashboard/categories/create', [categoriesController::class, 'createCategories']);
-Router::post('/dashboard/categories/create', [categoriesController::class, 'createCategories']);
-Router::get('/dashboard/categories/update', [categoriesController::class, 'updateCategories']);
-Router::post('/dashboard/categories/update', [categoriesController::class, 'updateCategories']);
-Router::post('/dashboard/categories/delete', [categoriesController::class, 'deleteCategories']);
+Router::get('/categories', [categoriesController::class, 'showCategories']);
+Router::get('/categories/create', [categoriesController::class, 'createCategories']);
+Router::post('/categories/create', [categoriesController::class, 'createCategories']);
+Router::get('/categories/update', [categoriesController::class, 'updateCategories']);
+Router::post('/categories/update', [categoriesController::class, 'updateCategories']);
+Router::post('/categories/delete', [categoriesController::class, 'deleteCategories']);
 
 Router::get('/dashboard/users', [usersController::class, 'showUsers']);
 Router::get('/dashboard/users/create', [usersController::class, 'createUsers']);
@@ -78,6 +79,6 @@ Router::get('/dashboard/publishers/create', [publishersController::class, 'creat
 Router::post('/dashboard/publishers/create', [publishersController::class, 'createPublishers']);
 Router::get('/dashboard/publishers/update', [publishersController::class, 'updatePublishers']);
 Router::post('/dashboard/publishers/update', [publishersController::class, 'updatePublishers']);
-Router::post('/dashboard/publishers/delete', [citiesCoofpublishersControllerfersControllerntroller::class, 'deletePublishers']);
+Router::post('/dashboard/publishers/delete', [publishersController::class, 'deletePublishers']);
 
 Router::resolve();
