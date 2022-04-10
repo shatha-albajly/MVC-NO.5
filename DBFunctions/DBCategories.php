@@ -3,7 +3,6 @@
 namespace app\DBFunctions;
 
 use app\controllers\categoriesController;
-use app\controllers\Controller;
 use app\DB;
 
 class DBCategories
