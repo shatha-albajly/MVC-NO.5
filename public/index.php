@@ -3,6 +3,7 @@
 use app\controllers\Controller;
 use app\controllers\categoriesController;
 use app\controllers\CitiesController;
+use app\controllers\paymentsController;
 
 use app\Router;
 
@@ -61,12 +62,12 @@ Router::get('/dashboard/users/update', [usersController::class, 'updateUsers']);
 Router::post('/dashboard/users/update', [usersController::class, 'updateUsers']);
 Router::post('/dashboard/users/delete', [usersController::class, 'deleteUsers']);
 
-Router::get('/dashboard/payments', [paymentsController::class, 'showPayments']);
-Router::get('/dashboard/payments/create', [paymentsController::class, 'createPayments']);
-Router::post('/dashboard/payments/create', [paymentsController::class, 'createPayments']);
-Router::get('/dashboard/payments/update', [paymentsController::class, 'updatePayments']);
-Router::post('/dashboard/payments/update', [paymentsController::class, 'updatePayments']);
-Router::post('/dashboard/payments/delete', [paymentsController::class, 'deletePayments']);
+Router::get('/payments', [paymentsController::class, 'showPayments']);
+Router::get('/payments/create', [paymentsController::class, 'createPayments']);
+Router::post('/payments/create', [paymentsController::class, 'createPayments']);
+Router::get('/payments/update', [paymentsController::class, 'updatePayments']);
+Router::post('/payments/update', [paymentsController::class, 'updatePayments']);
+Router::post('/payments/delete', [paymentsController::class, 'deletePayments']);
 
 Router::get('/dashboard/offers', [offersController::class, 'showOffers']);
 Router::get('/dashboard/offers/create', [offersController::class, 'createOffers']);
