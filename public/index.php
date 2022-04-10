@@ -4,7 +4,7 @@ use app\controllers\Controller;
 use app\controllers\categoriesController;
 use app\controllers\CitiesController;
 use app\controllers\paymentsController;
-
+use app\controllers\AuthorsController;
 use app\Router;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -34,12 +34,12 @@ Router::get('/dashboard/addresses/update', [addressesController::class, 'updateA
 Router::post('/dashboard/addresses/update', [addressesController::class, 'updateAddresses']);
 Router::post('/dashboard/addresses/delete', [addressesController::class, 'deleteAddresses']);
 
-Router::get('/dashboard/authors', [authorsController::class, 'showAuthors']);
-Router::get('/dashboard/authors/create', [authorsController::class, 'createAuthors']);
-Router::post('/dashboard/authors/create', [authorsController::class, 'createAuthors']);
-Router::get('/dashboard/authors/update', [authorsController::class, 'createAuthors']);
-Router::post('/dashboard/authors/update', [authorsController::class, 'createAuthors']);
-Router::post('/dashboard/authors/delete', [authorsController::class, 'createAuthors']);
+Router::get('/authors', [AuthorsController::class, 'showAuthors']);
+Router::get('/authors/create', [AuthorsController::class, 'createAuthors']);
+Router::post('/authors/create', [AuthorsController::class, 'createAuthors']);
+Router::get('/authors/update', [AuthorsController::class, 'createAuthors']);
+Router::post('/authors/update', [AuthorsController::class, 'createAuthors']);
+Router::post('/authors/delete', [AuthorsController::class, 'createAuthors']);
 
 Router::get('/categories', [categoriesController::class, 'showCategories']);
 Router::get('/categories/create', [categoriesController::class, 'createCategories']);
